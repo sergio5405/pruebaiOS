@@ -23,7 +23,6 @@ class EventoTVCell: UITableViewCell {
         nombreEventoLbl.text = "\(evento.nombreEvento) impartido por \(evento.nombreEncargado)"
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
 
         let fechaInicio = dateFormatter.date(from: evento.fechaHoraInicio)

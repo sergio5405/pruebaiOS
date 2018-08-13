@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PruebaNextia/Eventos/EventosTVC/EventoTVCell.swift"
-            timestampString = "555875883.598994"
+            timestampString = "555880600.04171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "updateUI()"
             landmarkType = "7">
          </BreakpointContent>

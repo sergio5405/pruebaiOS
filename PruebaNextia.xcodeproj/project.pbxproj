@@ -18,6 +18,7 @@
 		E0F90ADA212174F800EE59B5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F90AD9212174F800EE59B5 /* Alamofire.framework */; };
 		E0F90ADD21217A9900EE59B5 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F90ADC21217A9900EE59B5 /* Evento.swift */; };
 		E0F90ADF212182A300EE59B5 /* EventoTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F90ADE212182A300EE59B5 /* EventoTVCell.swift */; };
+		E0F90AE2212206E300EE59B5 /* EventoDetalleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F90AE1212206E300EE59B5 /* EventoDetalleVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E0F90AD9212174F800EE59B5 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F90ADC21217A9900EE59B5 /* Evento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
 		E0F90ADE212182A300EE59B5 /* EventoTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoTVCell.swift; sourceTree = "<group>"; };
+		E0F90AE1212206E300EE59B5 /* EventoDetalleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoDetalleVC.swift; sourceTree = "<group>"; };
 		E888D0FF3A9ACB19EE23596B /* Pods_PruebaNextia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PruebaNextia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 		E0F90AD52121634900EE59B5 /* Eventos */ = {
 			isa = PBXGroup;
 			children = (
+				E0F90AE0212206BF00EE59B5 /* EventoDetalleVC */,
 				E0F90AD62121636600EE59B5 /* EventosTVC */,
 				E0F90ADC21217A9900EE59B5 /* Evento.swift */,
 			);
@@ -120,6 +123,14 @@
 			path = EventosTVC;
 			sourceTree = "<group>";
 		};
+		E0F90AE0212206BF00EE59B5 /* EventoDetalleVC */ = {
+			isa = PBXGroup;
+			children = (
+				E0F90AE1212206E300EE59B5 /* EventoDetalleVC.swift */,
+			);
+			path = EventoDetalleVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +143,7 @@
 				E04F6AE8211C80FD00105EF3 /* Frameworks */,
 				E04F6AE9211C80FD00105EF3 /* Resources */,
 				29D1D5C28C3C07ECA300F16B /* [CP] Embed Pods Frameworks */,
+				C2D1D10694C0148409BAD00F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,6 +237,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PruebaNextia/Pods-PruebaNextia-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C2D1D10694C0148409BAD00F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PruebaNextia/Pods-PruebaNextia-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PruebaNextia/Pods-PruebaNextia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -233,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0F90AD8212163A600EE59B5 /* EventosTVC.swift in Sources */,
+				E0F90AE2212206E300EE59B5 /* EventoDetalleVC.swift in Sources */,
 				E04F6AF1211C80FD00105EF3 /* ViewController.swift in Sources */,
 				E04F6AEF211C80FD00105EF3 /* AppDelegate.swift in Sources */,
 				E04F6B01211CAE9300105EF3 /* LoginVC.swift in Sources */,

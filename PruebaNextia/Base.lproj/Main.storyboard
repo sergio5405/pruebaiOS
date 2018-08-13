@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -393,46 +394,70 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Eventos" id="4wU-mO-hKD"/>
                     <connections>
-                        <segue destination="Uyh-9X-auu" kind="show" id="Uza-eF-Cc6"/>
+                        <segue destination="Uyh-9X-auu" kind="show" identifier="mostrarEventoDetalle" id="Uza-eF-Cc6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEv-F3-kss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="700" y="1631"/>
         </scene>
-        <!--View Controller-->
+        <!--Evento DetalleVC-->
         <scene sceneID="45m-dN-xsQ">
             <objects>
-                <viewController id="Uyh-9X-auu" sceneMemberID="viewController">
+                <viewController id="Uyh-9X-auu" customClass="EventoDetalleVC" customModule="PruebaNextia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bMr-YK-sfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Responsable:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUt-XB-hqf">
-                                <rect key="frame" x="16" y="86" width="103" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dirección:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPi-Kn-DJX">
-                                <rect key="frame" x="16" y="115" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha y hora:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2V-m7-t22">
-                                <rect key="frame" x="16" y="271" width="104" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ROX-Yt-21o">
+                                <rect key="frame" x="10" y="74" width="355" height="348"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Responsable:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUt-XB-hqf">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha y hora:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2V-m7-t22">
+                                        <rect key="frame" x="0.0" y="25.5" width="355" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPi-Kn-DJX">
+                                        <rect key="frame" x="0.0" y="51" width="355" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQH-ch-Dtk" customClass="GMSMapView">
+                                        <rect key="frame" x="0.0" y="76.5" width="355" height="236.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vQH-ch-Dtk" secondAttribute="height" multiplier="3:2" id="a2o-Nz-KCS"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSK-og-mFe">
+                                        <rect key="frame" x="0.0" y="318" width="355" height="30"/>
+                                        <state key="normal" title="Inscribir"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ROX-Yt-21o" firstAttribute="leading" secondItem="Nd7-gT-l1H" secondAttribute="leading" constant="10" id="1S2-G1-KIe"/>
+                            <constraint firstItem="ROX-Yt-21o" firstAttribute="top" secondItem="Nd7-gT-l1H" secondAttribute="top" constant="10" id="3Vi-oc-Lyf"/>
+                            <constraint firstItem="Nd7-gT-l1H" firstAttribute="trailing" secondItem="ROX-Yt-21o" secondAttribute="trailing" constant="10" id="fD1-QV-9Wa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Nd7-gT-l1H"/>
                     </view>
+                    <connections>
+                        <outlet property="direccionLbl" destination="iPi-Kn-DJX" id="35M-YT-dwZ"/>
+                        <outlet property="fechaHoraLbl" destination="j2V-m7-t22" id="dOr-WN-51c"/>
+                        <outlet property="googleMapView" destination="vQH-ch-Dtk" id="np4-bq-pY6"/>
+                        <outlet property="responsableLbl" destination="GUt-XB-hqf" id="acx-YR-cXs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acN-02-dlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

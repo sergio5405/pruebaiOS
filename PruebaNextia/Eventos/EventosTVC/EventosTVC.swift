@@ -53,6 +53,7 @@ class EventosTVC: UITableViewController{
         self.tableView.estimatedRowHeight = self.tableView.rowHeight
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.refreshControl = refresher
+        self.cargarEventos()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -106,11 +107,38 @@ extension EventosTVC{
             let cell = tableView.dequeueReusableCell(withIdentifier: "busquedaTVCell", for: indexPath) as! BusquedaTVCell
             cell.parentTableView = self
             cell.busquedaTxt.delegate = cell
+            cell.selectionStyle = .none
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventoTVCell", for: indexPath) as! EventoTVCell
         cell.evento = Eventos.eventos![indexPath.row-1]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row==0{
+            return
+        }
+        
+        let idEvento = (self.tableView.cellForRow(at: indexPath) as! EventoTVCell).evento.id
+        print("didSelectRowAt \(idEvento)")
+        self.performSegue(withIdentifier: "mostrarEventoDetalle", sender: idEvento)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mostrarEventoDetalle" {
+            if let eventoDetalleVC = segue.destination as? EventoDetalleVC {
+                guard let eventos = Eventos.eventos else{
+                    return
+                }
+                let idSender = (sender as! Int)
+                for ev in eventos{
+                    if idSender == ev.id{
+                        eventoDetalleVC.evento = ev
+                    }
+                }
+            }
+        }
     }
     
     
